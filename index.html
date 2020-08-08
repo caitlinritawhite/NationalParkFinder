@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,6 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
   <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -54,24 +57,32 @@
     </div>
 
     <!-- image carousel of selected National Park -->
-    <section class="section">
-      <div class="container">
+    <!-- <section class="section">
+      <div class="container"> -->
         <!-- Start Carousel -->
-        <div id="carousel-demo" class="carousel">
-          <div class="item-1">
+        <!-- <div id="carousel-demo" class="carousel">
+          <div class="item-1"> -->
             <!-- pic 1 -->
-          </div>
-          <div class="item-2">
+          <!-- </div>
+          <div class="item-2"> -->
             <!-- pic 2 -->
-          </div>
-          <div class="item-3">
+          <!-- </div>
+          <div class="item-3"> -->
             <!-- pic 3 -->
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
         <!-- End Carousel -->
-      </div>
-    </section>
+      <!-- </div>
+    </section> -->
+    <div>
+    <p>Click the button to get your coordinates.</p>
 
+    <button onclick="getLocation()">Try It</button>
+    
+
+     <div id="map"><p id="demo"></p>
+        <p id="demo1"></p></div>
+    </div>
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -81,9 +92,9 @@
         </p>
       </div>
     </footer>
-
-    <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
-    
-</body>
-
+<script src="script.js"></script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
+    </script>
+  </body>
 </html>
