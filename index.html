@@ -24,12 +24,15 @@
       href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css"
     />
     <link rel="stylesheet" type="text/css" href="../css/hero.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <section class="hero is-info is-medium is-bold">
       <div class="hero-head">
         <nav class="navbar">
@@ -331,6 +334,15 @@
         </div>
       </div>
     </section>
+    <div>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+    
+
+     <div id="map"><p id="demo"></p>
+        <p id="demo1"></p></div>
+    </div>
     <footer class="footer">
       <div class="container">
         <div class="columns">
@@ -390,5 +402,9 @@
       </div>
       <script src="../js/bulma.js"></script>
     </footer>
+<script src="script.js"></script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
+    </script>
   </body>
 </html>
