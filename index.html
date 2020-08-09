@@ -24,11 +24,11 @@
 
 <body>
   <!-- nav bar-->
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="">
         <img src="pinterest_profile_image.png"
-          alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="28" height="50">
+          alt="fyp logo" width="28" height="28">
       </a>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -40,6 +40,9 @@
         Home
       </a>
       <a class="navbar-item">
+        About Us
+      </a>
+      <a class="navbar-item">
         Map
       </a>
       <a class="navbar-item">
@@ -48,13 +51,14 @@
     </div>
   </nav>
 
+<!--container with title and description of app-->
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title">
         Welcome to Find Your Path!
       </h1>
         <h2 class="subtitle">A Visitor's Guide to U.S. National Parks</h2>
-      <h2 class="subtitle">
+      <h2 class="paragraph">
         Here is where we will provide a brief description of the app and how it will benefit the user in planning their visit to their chosen park.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -64,19 +68,67 @@
     </div>
   </div>
 </section>
-<div class="box cta">
+
+<!--box with location button and dropdown list of states-->
+<div class="box cta is-light">
   <p class="has-text-centered">
     <p> Click <a href="" class="btn btn-primary">HERE</a> to find U.S. National Parks near you!</p>
+    <p>or</p>
     <p>Click the menu below to find National Parks in your state!</p>
-        <div class="dropdown is-hoverable">
-          <div class="dropdown-trigger">
-            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-              <span>Select a State:</span>
-              <span class="icon is-small">
-                <i class="fas fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
+    <select name="state" id="state">
+      <option value="" selected="selected">Select a State</option>
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="DC">District Of Columbia</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="HI">Hawaii</option>
+      <option value="ID">Idaho</option>
+      <option value="IL">Illinois</option>
+      <option value="IN">Indiana</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NV">Nevada</option>
+      <option value="NH">New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NM">New Mexico</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="ND">North Dakota</option>
+      <option value="OH">Ohio</option>
+      <option value="OK">Oklahoma</option>
+      <option value="OR">Oregon</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="SD">South Dakota</option>
+      <option value="TN">Tennessee</option>
+      <option value="TX">Texas</option>
+      <option value="UT">Utah</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WA">Washington</option>
+      <option value="WV">West Virginia</option>
+      <option value="WI">Wisconsin</option>
+      <option value="WY">Wyoming</option>
+    </select>
   </p>
 </div>
 
@@ -100,7 +152,7 @@
   <!-- </div>
     </section> -->
 
-  <p>Click the button to get your coordinates.</p>
+  <h3>Click the button to get your coordinates.</h3>
 
   <button onclick="getLocation()">Try It</button>
 
@@ -113,7 +165,7 @@
 
   <footer class="footer">
     <div class="content has-text-centered">
-      <!-- <img id="footer-banner" src="pinterest_profile_image.png"> -->
+      <img src="pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
       <p>
         <strong>Find Your Path</strong> by <a href="">Caitlin, Casey, Alexander, and Erik</a>. 
       </p>

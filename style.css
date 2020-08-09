@@ -1,31 +1,71 @@
 body {
-    background: url("https://images.unsplash.com/photo-1488441770602-aed21fc49bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60");
-    background-size: 100%;
-    opacity: 1;
+      /* Location of the image */
+  background-image: url("683878.jpg");
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
 }
+
+/*all paragraphs centered*/
 p {
     text-align: center;
 }
 
+h3 {
+    color: white;
+    font-weight: bold;
+}
+
+/*intro title*/
 .title {
     color: white;
     font-weight: bold;
+    background-color: darkgreen;
+    margin: 0% 27% 0% 27%;
+    border-radius: 5px;
 }
 
+/*intro subtitles*/
 .subtitle {
     color: white;
     font-weight: bold;
+    background-color: darkgreen;
+    margin: 0% 30% 0% 30%;
+    border-radius: 5px;
 }
 
-#banner-content {
-    text-align: center;
+/*paragraph in container*/
+.paragraph {
     color: white;
     font-weight: bold;
-    width: 100%;
-    height: 100%;
-    
+    background-color: darkgreen;
+    font-size: large;
+    border-radius: 5px;
 }
 
+/* box containing "HERE" button and dropdown for states*/
+.box {
+    text-align: center;
+    margin: 0% 25% 0% 25%;
+    background-color: lightgrey;
+}
+
+/*"HERE" button*/
 .btn {
     color: white;
     background-color: darkgreen;
@@ -33,18 +73,14 @@ p {
     padding: 5px 5px 5px 5px;
 }
 
-.box {
-    text-align: center;
-    
-}
-
-
-
-
-
-
 /* Set the size of the div element that contains the map */
 #map {
  height: 400px;  /* The height is 400 pixels */
  width: 100%;  /* The width is the width of the web page */
+}
+
+.footer {
+    margin: 25% 30% 25% 30%;
+    background-color: lightgrey;
+    border-radius: 5px;
 }
