@@ -6,8 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hero - Free Bulma template</title>
-  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
   <!-- Bulma Version 0.9.0-->
@@ -19,82 +18,126 @@
   <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <title>Find Your Path</title>
+
 </head>
 
 <body>
-  <!-- banner-->
-  <div class=banner>
-    <img class="mypics" src="linkedin_banner_image_2.png" alt="custom_html_banner1" style="width:100%">
-  </div>
+  <!-- nav bar-->
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        <img src="pinterest_profile_image.png"
+          alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="28" height="50">
+      </a>
 
-  <!-- paragraph describes site-->
-  <section class="hero is-info is-medium is-bold">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          Welcome to Find Your Path!
-        </h1>
-        <h2 class="subtitle">
-          This is your visitor's guide to the National Parks of the United States. Here is where a little intro paragraph will exist so the user will know what to expect with this app.
-        </h2>
-      </div>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <a class="navbar-item">
+        Home
+      </a>
+      <a class="navbar-item">
+        Map
+      </a>
+      <a class="navbar-item">
+        Images
+      </a>
     </div>
-  </section>
+  </nav>
 
-  <!--input box and button to search locations of National Parks-->
-  <input class="input" type="text" placeholder="Text input">
-  <input class="button" type="submit" value="Submit input">
-
-  <!--dropdown button to find nearby National Parks based on current location-->
-  <div class="dropdown">
-    <div class="dropdown-trigger">
-      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-        <span>Click me</span>
-        <span class="icon is-small">
-          <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Welcome to Find Your Path!
+      </h1>
+        <h2 class="subtitle">A Visitor's Guide to U.S. National Parks</h2>
+      <h2 class="subtitle">
+        Here is where we will provide a brief description of the app and how it will benefit the user in planning their visit to their chosen park.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </h2>
     </div>
+<<<<<<< HEAD
 </div>
     <!-- image carousel of selected National Park -->
     <!-- <section class="section">
+=======
+  </div>
+</section>
+<div class="box cta">
+  <p class="has-text-centered">
+    <p> Click <a href="" class="btn btn-primary">HERE</a> to find U.S. National Parks near you!</p>
+    <p>Click the menu below to find National Parks in your state!</p>
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span>Select a State:</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+  </p>
+</div>
+
+
+  <!-- image carousel of selected National Park -->
+  <!-- <section class="section">
+>>>>>>> 0d4cde9d7642573fbb25301a63b7b8c0681f2037
       <div class="container"> -->
-        <!-- Start Carousel -->
-        <!-- <div id="carousel-demo" class="carousel">
+  <!-- Start Carousel -->
+  <!-- <div id="carousel-demo" class="carousel">
           <div class="item-1"> -->
-            <!-- pic 1 -->
-          <!-- </div>
+  <!-- pic 1 -->
+  <!-- </div>
           <div class="item-2"> -->
-            <!-- pic 2 -->
-          <!-- </div>
+  <!-- pic 2 -->
+  <!-- </div>
           <div class="item-3"> -->
-            <!-- pic 3 -->
-          <!-- </div>
+  <!-- pic 3 -->
+  <!-- </div>
         </div> -->
+<<<<<<< HEAD
         <!-- End Carousel -->
       </div>
     </section>
     <div>
     <p>Click the button to get your coordinates.</p>
+=======
+  <!-- End Carousel -->
+  <!-- </div>
+    </section> -->
+>>>>>>> 0d4cde9d7642573fbb25301a63b7b8c0681f2037
 
-    <button onclick="getLocation()">Try It</button>
-    
+  <p>Click the button to get your coordinates.</p>
 
-     <div id="map"><p id="demo"></p>
-        <p id="demo1"></p></div>
+  <button onclick="getLocation()">Try It</button>
+
+
+  <div id="map">
+    <p id="demo"></p>
+    <p id="demo1"></p>
+  </div>
+  </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <!-- <img id="footer-banner" src="pinterest_profile_image.png"> -->
+      <p>
+        <strong>Find Your Path</strong> by <a href="">Caitlin, Casey, Alexander, and Erik</a>. 
+      </p>
     </div>
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
-      </div>
-    </footer>
-<script src="script.js"></script>
-    <script defer
+  </footer>
+
+  <script src="script.js"></script>
+  <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
     </script>
-  </body>
+</body>
+
 </html>
