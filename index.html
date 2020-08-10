@@ -33,7 +33,7 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
-      <a class="navbar-item">
+      <a href="index.html" class="navbar-item">
         Home
       </a>
       <a class="navbar-item">
@@ -67,10 +67,10 @@
   </div>
   </section>
 
-  <!--box with location button and dropdown list of states-->
-  <div class="box cta is-light">
-    <p class="has-text-centered">
-    <p> Click <a href="" class="btn btn-primary">HERE</a> to find U.S. National Parks near you!</p>
+<!--box with location button and dropdown list of states-->
+<div class="box cta is-light">
+  <p class="has-text-centered">
+    <p> Click <button class="btn" onclick="getLocation()">HERE</button> to find U.S. National Parks near you!</p>
     <p>or</p>
     <p>Click the menu below to find National Parks in your state!</p>
     <select name="state" id="state">
@@ -127,14 +127,32 @@
       <option value="WI">Wisconsin</option>
       <option value="WY">Wyoming</option>
     </select>
-    </p>
-  </div>
+    <a href="state page.html"></a><button class="btn" id="search-btn">Search</button></a>
+  </p>
+</div>
 
-  <h3>Click the button to get your coordinates.</h3>
 
-  <button onclick="getLocation()">Try It</button>
+  <!-- image carousel of selected National Park -->
+  <!-- <section class="section">
+      <div class="container"> -->
+  <!-- Start Carousel -->
+  <!-- <div id="carousel-demo" class="carousel">
+          <div class="item-1"> -->
+  <!-- pic 1 -->
+  <!-- </div>
+          <div class="item-2"> -->
+  <!-- pic 2 -->
+  <!-- </div>
+          <div class="item-3"> -->
+  <!-- pic 3 -->
+  <!-- </div>
+        </div> -->
+  <!-- End Carousel -->
+  <!-- </div>
+    </section> -->
 
-<!--map info-->
+ 
+
   <div id="map">
     <p id="demo"></p>
     <p id="demo1"></p>
@@ -151,6 +169,12 @@
   </div>
 
   <!--footer with logo and group member's names-->
+
+  <figure id = "state-img" class="image is-128x128">
+
+  </figure>
+
+
   <footer class="footer">
     <div class="content has-text-centered">
       <img src="pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
