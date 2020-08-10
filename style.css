@@ -35,7 +35,7 @@ h3 {
 .title {
     color: white;
     font-weight: bold;
-    background-color: darkgreen;
+    background-color:darkgreen;
     margin: 0% 27% 0% 27%;
     border-radius: 5px;
 }
@@ -51,7 +51,7 @@ h3 {
 
 /*paragraph in container*/
 .paragraph {
-    color: white;
+    color:white;;
     font-weight: bold;
     background-color: darkgreen;
     font-size: large;
@@ -69,14 +69,15 @@ h3 {
 .btn {
     color: white;
     background-color: darkgreen;
-    border-radius: 75px;
+    border-radius: 10px;
     padding: 5px 5px 5px 5px;
 }
 
 /* Set the size of the div element that contains the map */
 #map {
  height: 400px;  /* The height is 400 pixels */
- width: 100%;  /* The width is the width of the web page */
+ width: 80%;  /* The width is the width of the web page */
+ margin-left: 10%;
 }
 
 .footer {
