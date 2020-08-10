@@ -18,6 +18,7 @@ function showPosition(position) {
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
 
+
   initMap(latitude, longitude);
 
   var queryURL =
@@ -45,27 +46,9 @@ function showPosition(position) {
     }).then(function (parks) {
 
       console.log(parks)
+      displayParks(parks);
 
 
-      for (var i = 0; i < parks.data.length; i++) {
-        var coords = parks.data[i].latLong;
-        var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
-        var marker = new google.maps.Marker({
-          position: latLng,
-          map: map
-        });
-
-        var parkImage = $("<img>");
-
-
-        parkImage.attr("src", parks.data[i].images[0].url)
-
-
-        $("#state-img").append(parkImage)
-
-        console.log(parkImage)
-
-      };
 
     });
   });
@@ -73,10 +56,33 @@ function showPosition(position) {
 
 var map;
 
+function displayParks(parks){
+  for (var i = 0; i < parks.data.length; i++) {
+    var coords = parks.data[i].latLong;
+    var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+
+    // var parkImage = $("<img>");
+
+
+    // parkImage.attr("src", parks.data[i].images[0].url)
+
+
+    // $("#state-img").append(parkImage)
+
+  
+
+  };
+}
+
 // Initialize and add the map
 function initMap(latitude, longitude) {
   // The location of Uluru
-  var uluru = { lat: latitude, lng: longitude };
+  $("#map").empty()
+  var uluru = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
   // The map, centered at Uluru
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 8,
@@ -102,12 +108,34 @@ function initMap(latitude, longitude) {
   });
 }
 
-$("#search-btn").on("click", function () {
+function renderStates (){
+  $("#search-btn").on("click", function () {
+  
 
-  var userChoice = $("#state :selected").val();
+    var userChoice = $("#state :selected").val();
+  
+    var parkURL =
+        " https://developer.nps.gov/api/v1/parks?stateCode=" +
+        userChoice +
+        "&api_key=wV47kSkvj2E4EXWlDq3d6TIN4Q8X39nRx1M3d3Qb";
+  
+      $.ajax({
+        url: parkURL,
+        method: "GET",
+      }).then(function (parkInfo) {
+        initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
+        console.log(parkInfo)
+        displayParks(parkInfo)
+    
+    
+      });
+  
+  });
 
-  console.log(userChoice)
 
-  initMap()
+}
 
-})
+renderStates()
+
+
+  
