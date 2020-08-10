@@ -82,7 +82,7 @@ function displayParks(parks){
 function initMap(latitude, longitude) {
   // The location of Uluru
   $("#map").empty()
-  var uluru = { lat: latitude, lng: longitude };
+  var uluru = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
   // The map, centered at Uluru
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 8,
@@ -125,7 +125,7 @@ function renderStates (){
       }).then(function (parkInfo) {
         initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
         console.log(parkInfo)
-       // displayParks(parkInfo)
+        displayParks(parkInfo)
     
     
       });
