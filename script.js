@@ -51,25 +51,25 @@ function showPosition(position) {
         var coords = parks.data[i].latLong;
         var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
         var marker = new google.maps.Marker({
-        position: latLng,
-        map: map
+          position: latLng,
+          map: map
         });
 
         var parkImage = $("<img>");
 
-       
+
         parkImage.attr("src", parks.data[i].images[0].url)
 
-       
+
         $("#state-img").append(parkImage)
 
         console.log(parkImage)
 
-    };
+      };
 
     });
   });
-  };
+};
 
 var map;
 
@@ -83,15 +83,31 @@ function initMap(latitude, longitude) {
     center: uluru,
   });
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({ position: uluru, map: map });
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map,
+    title: "Your Location"
+  });
+  const contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">Your location</h1>' 
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
 }
 
 $("#search-btn").on("click", function () {
-     
+
   var userChoice = $("#state :selected").val();
 
-   console.log(userChoice)
+  console.log(userChoice)
 
   initMap()
 
- })
+})
