@@ -66,11 +66,26 @@ function displayParks(parks){
       position: latLng,
       map: map
     });
+
+    var parkName = parks.data[i].fullName;
+    var parkInfo = parks.data[i].description
     var imageDiv = $("<div>").attr("id", "state-img" + [i]).addClass("column");
-    var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("btn");
+    var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("state-btn");
     var stateImg = $("<img>").attr("src", parks.data[i].images[i].url).addClass("standard-img")
     $("#state-name").append(finalDiv)
     var finalDiv = $(imageDiv).append(stateImg, stateBtn)
+
+    console.log(parkName)
+    $(".state-btn").on("click", function(){
+      var infoHeader = $("#info-header").text(parkName).addClass("header")
+      var infoParagraph = $("#description").text(parkInfo)
+      $("#info-div").append(infoHeader)
+      $("#description").append(infoParagraph)
+     
+    })
+    
+
+
 
  
  
