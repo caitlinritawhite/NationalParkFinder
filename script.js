@@ -66,12 +66,18 @@ function displayParks(parks){
       position: latLng,
       map: map
     });
+    var imageDiv = $("<div>").attr("id", "state-img" + [i]).addClass("column");
+    var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("btn");
+    var stateImg = $("<img>").attr("src", parks.data[i].images[i].url).addClass("standard-img")
+    $("#state-name").append(finalDiv)
+    var finalDiv = $(imageDiv).append(stateImg, stateBtn)
 
-    
-    $("#state-img").append('<img class ="standard-img" src="' + parks.data[i].images[i].url + '">');
+ 
+ 
 
 
-    
+
+
   }
 
   
@@ -139,6 +145,7 @@ function renderStates (){
       });
   
   });
+
 
 
 }
