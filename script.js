@@ -56,7 +56,7 @@ function showPosition(position) {
 
 var map;
 
-function displayParks(parks){
+function displayParks(parks) {
   for (var i = 0; i < parks.data.length; i++) {
     var coords = parks.data[i].latLong;
     var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
@@ -64,7 +64,18 @@ function displayParks(parks){
       position: latLng,
       map: map
     });
+    const contentString =
+      '<div id="content">' +
+      '<div id="siteNotice">' +
+      "</div>" +
+      '<h1 id="firstHeading" class="firstHeading">Your location</h1>'
+    const infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
 
+    marker.addListener("click", () => {
+      infowindow.open(map, marker);
+    });
     // var parkImage = $("<img>");
 
 
@@ -73,7 +84,7 @@ function displayParks(parks){
 
     // $("#state-img").append(parkImage)
 
-  
+
 
   };
 }
@@ -98,7 +109,7 @@ function initMap(latitude, longitude) {
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Your location</h1>' 
+    '<h1 id="firstHeading" class="firstHeading">Your location</h1>'
   const infowindow = new google.maps.InfoWindow({
     content: contentString
   });
@@ -108,28 +119,28 @@ function initMap(latitude, longitude) {
   });
 }
 
-function renderStates (){
+function renderStates() {
   $("#search-btn").on("click", function () {
-  
+
 
     var userChoice = $("#state :selected").val();
-  
+
     var parkURL =
-        " https://developer.nps.gov/api/v1/parks?stateCode=" +
-        userChoice +
-        "&api_key=wV47kSkvj2E4EXWlDq3d6TIN4Q8X39nRx1M3d3Qb";
-  
-      $.ajax({
-        url: parkURL,
-        method: "GET",
-      }).then(function (parkInfo) {
-        initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
-        console.log(parkInfo)
-        displayParks(parkInfo)
-    
-    
-      });
-  
+      " https://developer.nps.gov/api/v1/parks?stateCode=" +
+      userChoice +
+      "&api_key=wV47kSkvj2E4EXWlDq3d6TIN4Q8X39nRx1M3d3Qb";
+
+    $.ajax({
+      url: parkURL,
+      method: "GET",
+    }).then(function (parkInfo) {
+      initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
+      console.log(parkInfo)
+      displayParks(parkInfo)
+
+
+    });
+
   });
 
 
@@ -138,4 +149,3 @@ function renderStates (){
 renderStates()
 
 
-  
