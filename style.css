@@ -112,3 +112,10 @@ h3 {
     border-radius: 5px;
 }
 
+.standard-img {
+    height: 80px!important;
+}
+
+.ui {
+    margin-left: 20%;
+}

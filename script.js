@@ -57,7 +57,9 @@ function showPosition(position) {
 var map;
 
 function displayParks(parks){
+  var parkIndex = 0
   for (var i = 0; i < parks.data.length; i++) {
+  var parkLoop = parks.data[i].images
     var coords = parks.data[i].latLong;
     var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
     var marker = new google.maps.Marker({
@@ -65,18 +67,24 @@ function displayParks(parks){
       map: map
     });
 
-    // var parkImage = $("<img>");
+    
+    $("#state-img").append('<img class ="standard-img" src="' + parks.data[i].images[i].url + '">');
 
 
-    // parkImage.attr("src", parks.data[i].images[0].url)
-
-
-    // $("#state-img").append(parkImage)
+    
+  }
 
   
 
+
+  
+ 
+
+  
+  
+
   };
-}
+
 
 // Initialize and add the map
 function initMap(latitude, longitude) {
