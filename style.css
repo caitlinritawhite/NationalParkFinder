@@ -80,18 +80,18 @@ h3 {
  margin-left: 10%;
 }
 
-.slider {
+/*.slider {
     /* line them up horizontally */
-    display: flex;
+    /*display: flex;
   
     /* allow for scrolling */
-    overflow-x: auto;
+    /*overflow-x: auto;
   
     /* make it smooth on iOS */
-    -webkit-overflow-scrolling: touch;
+    /*-webkit-overflow-scrolling: touch;
 
      /* each slide snaps into place */
-    scroll-snap-points-x: repeat(300px);
+    /*scroll-snap-points-x: repeat(300px);
     scroll-snap-type: mandatory;
 
     color: white;
@@ -100,10 +100,10 @@ h3 {
 
   .slider > div {
     /* make sure the width is honored */
-    flex-shrink: 0;
+   /* flex-shrink: 0;
     width: 300px;
     height: 300px;
-  }
+  }*/
 
 
 .footer {
