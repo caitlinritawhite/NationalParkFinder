@@ -78,21 +78,24 @@ function displayParks(parks) {
 
     marker.addListener('click', function () {
       var markerContent = latLng;
-      closeOtherInfo();
+      // closeOtherInfo();
+      infowindow.close()
       infowindow.setContent(markerContent);
       infowindow.open(map, this);
       // infowindow.open(marker.get('map'), marker);
       // parks.data[i] = infowindow;
+      
     });
     
     function closeOtherInfo() {
+      console.log("closeOtherInfo")
       if (InforObj.length > 0) {
           InforObj[0].set("marker", null);
           /* and close it */
           InforObj[0].close();
           /* blank the array */
           InforObj.length = 0;
-      }
+          }
   }
 
     // var parkImage = $("<img>");
@@ -419,6 +422,7 @@ function renderStates() {
     });
 
   });
+
 
 
 }
