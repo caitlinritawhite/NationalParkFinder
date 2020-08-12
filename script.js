@@ -66,35 +66,13 @@ function displayParks(parks){
       position: latLng,
       map: map
     });
+    var imageDiv = $("<div>").attr("id", "state-img" + [i]).addClass("column");
+    var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("btn");
+    var stateImg = $("<img>").attr("src", parks.data[i].images[i].url).addClass("standard-img")
+    $("#state-name").append(finalDiv)
+    var finalDiv = $(imageDiv).append(stateImg, stateBtn)
 
-    
-    $("#state-img").append('<img class ="standard-img" src="' + parks.data[i].images[i].url + '">');
-
-    // var pic1 = $(<img>).attr("src", parks.data[0].images[0]);
-    // var pic2 = $(<img>).attr("src", parks.data[1].images[]);
-    // var pic3 = $(<img>).attr("src", );
-    // var pic4 = $(<img>).attr("src", );
-    // var pic5 = $(<img>).attr("src", );
-    // var pic6 = $(<img>).attr("src", );
-
-    // $("#pic1").append(pic1);
-    // $("#pic2").append(pic1);
-    // $("#pic3").append(pic1);
-    // $("#pic4").append(pic1);
-    // $("#pic5").append(pic1);
-    // $("#pic6").append(pic1);
-
-    
   }
-
-  
-
-
-  
- 
-
-  
-  
 
   };
 
@@ -152,6 +130,7 @@ function renderStates (){
       });
   
   });
+
 
 
 }

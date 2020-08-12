@@ -80,31 +80,6 @@ h3 {
  margin-left: 10%;
 }
 
-/*.slider {
-    /* line them up horizontally */
-    /*display: flex;
-  
-    /* allow for scrolling */
-    /*overflow-x: auto;
-  
-    /* make it smooth on iOS */
-    /*-webkit-overflow-scrolling: touch;
-
-     /* each slide snaps into place */
-    /*scroll-snap-points-x: repeat(300px);
-    scroll-snap-type: mandatory;
-
-    color: white;
-    background-color: darkgreen;
-  }
-
-  .slider > div {
-    /* make sure the width is honored */
-   /* flex-shrink: 0;
-    width: 300px;
-    height: 300px;
-  }*/
-
 
 .footer {
     margin: 25% 30% 25% 30%;
@@ -114,8 +89,20 @@ h3 {
 
 .standard-img {
     height: 80px!important;
+    width: auto;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
 }
 
-.ui {
-    margin-left: 20%;
-}
+.imgs-btns { 
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+} 
+
+
+
+
+
