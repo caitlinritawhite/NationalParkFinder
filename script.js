@@ -85,12 +85,10 @@ function displayParks(parks) {
     $("#state-name").append(finalDiv)
     var finalDiv = $(imageDiv).append(stateImg, stateBtn)
 
-<<<<<<< HEAD
   }
 
   };
 
-=======
 
 
 
@@ -127,11 +125,9 @@ function displayParks(parks) {
         InforObj.length = 0;
       }
     }
+;
 
-  }
-
-  // spinner.setAttribute('hidden', '');
-};
+  // spinner.setAttribute('hidden', '');;
 //Button of the Park Name - when clicked displays --//
 $(document).on("click", ".state-btn", function(){
 
@@ -213,7 +209,6 @@ $(document).on("click", ".state-btn", function(){
   })
 
 // Initialize and add the map and syles the map
->>>>>>> bf644ec6691f3d99b4a6af3a09005bde790a8c2b
 
 function initMap(latitude, longitude) {
 
