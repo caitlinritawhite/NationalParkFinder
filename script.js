@@ -1,9 +1,11 @@
 var x = document.getElementById("demo");
 var y = document.getElementById("demo1");
+const spinner = document.getElementById("spinner");
 
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    spinner.removeAttribute('hidden');
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -18,7 +20,7 @@ function showPosition(position) {
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
 
-
+ 
   initMap(latitude, longitude);
 
   var queryURL =
@@ -44,11 +46,11 @@ function showPosition(position) {
       url: queryURL2,
       method: "GET",
     }).then(function (parks) {
-
+      spinner.setAttribute('hidden', '');
       console.log(parks)
       displayParks(parks);
-
-
+      
+     
 
     });
   });
@@ -78,12 +80,12 @@ function displayParks(parks) {
 
     marker.addListener('click', function () {
       var markerContent = latLng;
-      // closeOtherInfo();
-      infowindow.close()
+      
+      closeOtherInfo();
+      // infowindow.close()
       infowindow.setContent(markerContent);
       infowindow.open(map, this);
-      // infowindow.open(marker.get('map'), marker);
-      // parks.data[i] = infowindow;
+      
       
     });
     
@@ -116,10 +118,10 @@ function displayParks(parks) {
     // $("#pic4").append(pic1);
     // $("#pic5").append(pic1);
     // $("#pic6").append(pic1);
-
+    
   }
 
-
+  // spinner.setAttribute('hidden', '');
 
 
 
@@ -131,9 +133,11 @@ function displayParks(parks) {
 };
 
 
-// Initialize and add the map
+// Initialize and add the map and syles the map
+
 function initMap(latitude, longitude) {
-  // The location of Uluru
+  
+  // The location of the map
   $("#map").empty()
   var uluru = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
   // The map, centered at Uluru
@@ -408,13 +412,14 @@ function initMap(latitude, longitude) {
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
-  
+ 
   
 }
 
 function renderStates() {
+  
   $("#search-btn").on("click", function () {
-
+    spinner.removeAttribute('hidden');
 
     var userChoice = $("#state :selected").val();
 
@@ -430,8 +435,7 @@ function renderStates() {
       initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
       console.log(parkInfo)
       displayParks(parkInfo)
-
-
+      spinner.setAttribute('hidden', '');
     });
 
   });

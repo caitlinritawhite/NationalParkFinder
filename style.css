@@ -80,6 +80,38 @@ h3 {
  margin-left: 10%;
 }
 
+#spinner:not([hidden]) {
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #spinner::after {
+    content: "";
+    width: 120px;
+    height: 120px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #7ff53a;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
 /*.slider {
     /* line them up horizontally */
     /*display: flex;
