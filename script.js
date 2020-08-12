@@ -135,15 +135,6 @@ function displayParks(parks) {
 
   }
 
-
-
-
-
-
-
-
-
-
 };
 //Button of the Park Name - when clicked displays --//
 $(document).on("click", ".state-btn", function(){
