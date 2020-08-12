@@ -35,7 +35,7 @@ h3 {
 .title {
     color: white;
     font-weight: bold;
-    background-color:rgba(46, 99, 46, .8);
+    background-color:rgba(200, 84, 211, 0.8);
     margin: 0% 27% 0% 27%;
     border-radius: 5px;
 }
@@ -44,7 +44,7 @@ h3 {
 .subtitle {
     color: white;
     font-weight: bold;
-    background-color: rgba(0, 100, 0, .8);
+    background-color: rgba(200, 84, 211, 0.8);
     margin: 0% 30% 0% 30%;
     border-radius: 5px;
 }
@@ -53,7 +53,7 @@ h3 {
 .paragraph {
     color:white;;
     font-weight: bold;
-    background-color: rgba(0, 100, 0, .8);
+    background-color: rgba(200, 84, 211, 0.8);
     font-size: large;
     border-radius: 5px;
 }
@@ -68,7 +68,14 @@ h3 {
 /*"HERE" button*/
 .btn {
     color: white;
-    background-color: darkgreen;
+    background-color: rgba(124, 7, 134, 0.8);
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+.state-btn {
+    color: white;
+    background-color: rgba(200, 84, 211, 0.8);
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
 }
@@ -80,6 +87,66 @@ h3 {
  margin-left: 10%;
 }
 
+<<<<<<< HEAD
+=======
+#spinner:not([hidden]) {
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #spinner::after {
+    content: "";
+    width: 120px;
+    height: 120px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #7ff53a;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+/*.slider {
+    /* line them up horizontally */
+    /*display: flex;
+  
+    /* allow for scrolling */
+    /*overflow-x: auto;
+  
+    /* make it smooth on iOS */
+    /*-webkit-overflow-scrolling: touch;
+
+     /* each slide snaps into place */
+    /*scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+
+    color: white;
+    background-color: darkgreen;
+  }
+
+  .slider > div {
+    /* make sure the width is honored */
+   /* flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+  }*/
+
+>>>>>>> bf644ec6691f3d99b4a6af3a09005bde790a8c2b
 
 .footer {
     margin: 25% 30% 25% 30%;
