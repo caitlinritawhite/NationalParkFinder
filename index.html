@@ -58,12 +58,7 @@
       </h1>
       <h2 class="subtitle">A Visitor's Guide to U.S. National Parks</h2>
       <h2 class="paragraph">
-        Here is where we will provide a brief description of the app and how it will benefit the user in planning their
-        visit to their chosen park.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
+        Attention all nature lovers! Find Your Path is an expert guide to locating all of the United State's National Parks. Simply search your location, or the state you would like to visit, and find all of the information necessary to plan your next hike!
       </h2>
     </div>
   </div>
@@ -133,18 +128,21 @@
     </p>
   </div>
 
-  
+  <!-- Alex add a Loader Div so we can apppend it to the map -->
+
+
   <div id="map">
     <p id="demo"></p>
     <p id="demo1"></p>
+    <div hidden id="spinner"></div>
+  </div>
   </div>
 
- 
 
   <div class="ui six column grid">
     <div class="column">
       <div class="ui fluid card">
-        <div id = "state-img" class="image">
+        <div id="state-img" class="image">
         </div>
         <div class="content">
           <a id="state-name" class="header"></a>
@@ -156,9 +154,9 @@
 
 
 
-  <!--Working Image Code-->
+    <!--Working Image Code-->
 
-  <!-- <div id = "state-img" class="ui">
+    <!-- <div id = "state-img" class="ui">
     <div class="content">
         
       </div>
@@ -195,7 +193,7 @@
       
       </div>
     </div>
-  </div>
+    </div>
 
   <!--Card for Park Contact Info display-->
   <div class="ui card">
@@ -226,8 +224,8 @@
 
 
 
-  <!--slike carousel of park images-->
-  <!-- <div class="slider">  
+    <!--slike carousel of park images-->
+    <!-- <div class="slider">  
     <div>Slide #1</div>
     <div>Slide #2</div>
     <div>Slide #3</div>
@@ -235,44 +233,44 @@
     <div>Slide #5</div>
   </div>-->
 
-  <!-- image carousel of selected National Park -->
-  <!-- <section class="section">
+    <!-- image carousel of selected National Park -->
+    <!-- <section class="section">
       <div class="container"> -->
-  <!-- Start Carousel -->
-  <!-- <div id="carousel-demo" class="carousel">
+    <!-- Start Carousel -->
+    <!-- <div id="carousel-demo" class="carousel">
           <div class="item-1"> -->
-  <!-- pic 1 -->
-  <!-- </div>
+    <!-- pic 1 -->
+    <!-- </div>
           <div class="item-2"> -->
-  <!-- pic 2 -->
-  <!-- </div>
+    <!-- pic 2 -->
+    <!-- </div>
           <div class="item-3"> -->
-  <!-- pic 3 -->
-  <!-- </div>
+    <!-- pic 3 -->
+    <!-- </div>
         </div> -->
-  <!-- End Carousel -->
-  <!-- </div>
+    <!-- End Carousel -->
+    <!-- </div>
     </section> -->
-  <!--footer with logo and group member's names-->
-  <!-- 
+    <!--footer with logo and group member's names-->
+    <!-- 
   <figure id = "state-img" class="image is-128x128">
 
   </figure> -->
 
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <img src="pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
-      <p>
-        <strong>Find Your Path</strong> by <a href="">Caitlin, Casey, Alexander, and Erik</a>.
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <img src="pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
+        <p>
+          <strong>Find Your Path</strong> by <a href="">Caitlin, Casey, Alexander, and Erik</a>.
+        </p>
+      </div>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
-  </script>
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
+    </script>
+    <script src="script.js"></script>
 
 
 </body>

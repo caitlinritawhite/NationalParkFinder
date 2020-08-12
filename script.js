@@ -1,9 +1,11 @@
 var x = document.getElementById("demo");
 var y = document.getElementById("demo1");
+const spinner = document.getElementById("spinner");
 
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    spinner.removeAttribute('hidden');
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -44,8 +46,13 @@ function showPosition(position) {
       url: queryURL2,
       method: "GET",
     }).then(function (parks) {
+
+      spinner.setAttribute('hidden', '');
+      // console.log(parks)
+
       parksList = parks.data
       console.log(parks)
+
       displayParks(parks);
 
 
@@ -59,10 +66,11 @@ var parksList;
 
 function displayParks(parks) {
   var InforObj = []
+
   // var parkIndex = 0
+  
   for (var i = 0; i < parks.data.length; i++) {
-   
-    
+       console.log(parks.data.length)
     var coords = parks.data[i].latLong;
     var latLng = new google.maps.LatLng(parks.data[i].latitude, parks.data[i].longitude);
     var marker = new google.maps.Marker({
@@ -70,20 +78,20 @@ function displayParks(parks) {
       map: map
     });
 
-   
+    // console.log(latLng)
     var imageDiv = $("<div>").attr("id", "state-img" + [i]).addClass("column");
     var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("state-btn").attr("park", i);
     var stateImg = $("<img>").attr("src", parks.data[i].images[i].url).addClass("standard-img")
     $("#state-name").append(finalDiv)
     var finalDiv = $(imageDiv).append(stateImg, stateBtn)
 
-    
-    
 
 
 
- 
- 
+
+
+
+
     const contentString =
       '<div id="content text"><h4>' + parks.data[i].description +
       '</h4><p></p></div>';
@@ -94,138 +102,44 @@ function displayParks(parks) {
 
     marker.addListener('click', function () {
       var markerContent = latLng;
-      // closeOtherInfo();
-      infowindow.close()
+
+      closeOtherInfo();
+      // infowindow.close()
       infowindow.setContent(markerContent);
       infowindow.open(map, this);
-      // infowindow.open(marker.get('map'), marker);
-      // parks.data[i] = infowindow;
-      
+
+
     });
-    
+
     function closeOtherInfo() {
-      console.log("closeOtherInfo")
+      
       if (InforObj.length > 0) {
-          InforObj[0].set("marker", null);
-          /* and close it */
-          InforObj[0].close();
-          /* blank the array */
-          InforObj.length = 0;
-          }
-  }
-
-    // var parkImage = $("<img>");
-
-    
-
-
-    // var pic1 = $(<img>).attr("src", parks.data[0].images[0]);
-    // var pic2 = $(<img>).attr("src", parks.data[1].images[]);
-    // var pic3 = $(<img>).attr("src", );
-    // var pic4 = $(<img>).attr("src", );
-    // var pic5 = $(<img>).attr("src", );
-    // var pic6 = $(<img>).attr("src", );
-
-    // $("#pic1").append(pic1);
-    // $("#pic2").append(pic1);
-    // $("#pic3").append(pic1);
-    // $("#pic4").append(pic1);
-    // $("#pic5").append(pic1);
-    // $("#pic6").append(pic1);
+        InforObj[0].set("marker", null);
+        /* and close it */
+        InforObj[0].close();
+        /* blank the array */
+        InforObj.length = 0;
+      }
+    }
 
   }
 
+  // spinner.setAttribute('hidden', '');
 };
-//Button of the Park Name - when clicked displays --//
-$(document).on("click", ".state-btn", function(){
 
-  var i = $(this).attr("park", i)
 
-    //Calling Park Name and Description from response //
-    var parkName = parksList[i].fullName;
-    var parkInfo = parksList[i].description;
-    
-    
-    //Adding the Park Name and info to the respective Divs //
-    var infoHeader = $("#info-header").text(parkName).addClass("header")
-    var infoParagraph = $("#description").text(parkInfo )
-  
-    //Appendiing this info to the page //
-    $("#info-div").append(infoHeader, infoParagraph)
-  
-    //Calling the Park Directions from response //
-    var directions = parksList[i].directionsInfo
-    
-    //Adding a title and the info to the respective Divs //
-    var directionsDiv = $("#directions").text("Directions")
-    var directionsInfo = $("#directions-info").text(directions)
-    
-  
-    //Appending this info to the page //
-    $("#directions-div").append(directionsDiv, directionsInfo)
-  
-    //Calling phone number and email from response //
-    var phoneNumber = parksList[i].contacts.phoneNumbers[0].phoneNumber;
-    var emailAddress = parksList[i].contacts.emailAddresses[0].emailAddress
-  
-    //Adding a title phone number and email info to respective Divs //
-    var contactDiv = $("#contact-title").text("Contact Info")
-    var phoneInfo = $("#phone-info").text("Phone Number: " + phoneNumber)
-    var emailInfo = $("#email-info").text("Email Address: " + emailAddress)
-  
-  
-    //Appending this info to the page //
-    $("#contact-div").append(contactDiv, phoneInfo, emailInfo)
-  
-    //Calling the address line, city, state and postal code from the response //
-    var address = parksList[i].addresses[0].line1;
-    var city = parksList[i].addresses[0].city;
-    var state = parksList[i].addresses[0].stateCode;
-    var zipCode = parksList[i].addresses[0].postalCode;
-  
-    //Adding a title and this information to respective Divs //
-    var addressTitle = $("#address").text("Address")
-    var addressInfo = $("#address-info").text(address + " " + city + ", " + state + " " + zipCode)
-  
-    //Appending this info to the page //
-    $("#address-div").append(addressTitle, addressInfo)
-   
-    // Calling Entrance Fee info from the response // 
-  
-    var entranceTitle = parksList[i].entranceFees[0].title;
-    var entranceCost = parksList[i].entranceFees[0].cost;
-    var entranceFee = parksList[i].entranceFees[0].description;
-  
-  
-  //Adding this information to respective Divs //
-  var feeTitle = $("#fee-title").text(entranceTitle);
-  var feeCost = $("#entrance-fee-cost").text("$" + entranceCost);
-  var feeInfo = $("#entrance-fee-info").text(entranceFee)
-  
-  $("#fee-div").append(feeTitle, feeCost, feeInfo)
-  
-  //Calling Hours of operation from response //
-  var hourInfo = parksList[i].operatingHours[0].description;
-  
-  //Adding a title and this information to respective Divs //
-  var hourTitle = $("#hours-title").text("Hours of Operation");
-  var hours = $("#hours-description").text(hourInfo);
-  
-  //Appending this information to the page //
-  $("#hours-div").append(hourTitle, hours)
-    console.log(hourInfo)     
-  })
+// Initialize and add the map and syles the map
 
-// Initialize and add the map
 function initMap(latitude, longitude) {
-  // The location of Uluru
+
+  // The location of the map
   $("#map").empty()
   var uluru = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
   // The map, centered at Uluru
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 8,
     center: uluru,
-    styles:[
+    styles: [
       {
         "elementType": "geometry",
         "stylers": [
@@ -493,14 +407,14 @@ function initMap(latitude, longitude) {
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
-  
-  
+
+
 }
 
 function renderStates() {
-  $("#search-btn").on("click", function () {
 
-   
+  $("#search-btn").on("click", function () {
+    spinner.removeAttribute('hidden');
 
     var userChoice = $("#state :selected").val();
 
@@ -513,11 +427,11 @@ function renderStates() {
       url: parkURL,
       method: "GET",
     }).then(function (parkInfo) {
+      parksList = parkInfo.data
       initMap(parkInfo.data[0].latitude, parkInfo.data[0].longitude);
-      console.log(parkInfo)
+       console.log(parkInfo)
       displayParks(parkInfo)
-
-
+      spinner.setAttribute('hidden', '');
     });
 
   });
@@ -525,7 +439,85 @@ function renderStates() {
 
 
 }
+//Button of the Park Name - when clicked displays --//
+$(document).on("click", ".state-btn", function(){
 
+  var i = $(this).attr("park")
+
+    //Calling Park Name and Description from response //
+    var parkName = parksList[i].fullName;
+    var parkInfo = parksList[i].description;
+    
+    
+    //Adding the Park Name and info to the respective Divs //
+    var infoHeader = $("#info-header").text(parkName).addClass("header")
+    var infoParagraph = $("#description").text(parkInfo )
+  
+    //Appendiing this info to the page //
+    $("#info-div").append(infoHeader, infoParagraph)
+  
+    //Calling the Park Directions from response //
+    var directions = parksList[i].directionsInfo
+    
+    //Adding a title and the info to the respective Divs //
+    var directionsDiv = $("#directions").text("Directions")
+    var directionsInfo = $("#directions-info").text(directions)
+    
+  
+    //Appending this info to the page //
+    $("#directions-div").append(directionsDiv, directionsInfo)
+  
+    //Calling phone number and email from response //
+    var phoneNumber = parksList[i].contacts.phoneNumbers[0].phoneNumber;
+    var emailAddress = parksList[i].contacts.emailAddresses[0].emailAddress
+  
+    //Adding a title phone number and email info to respective Divs //
+    var contactDiv = $("#contact-title").text("Contact Info")
+    var phoneInfo = $("#phone-info").text("Phone Number: " + phoneNumber)
+    var emailInfo = $("#email-info").text("Email Address: " + emailAddress)
+  
+  
+    //Appending this info to the page //
+    $("#contact-div").append(contactDiv, phoneInfo, emailInfo)
+  
+    //Calling the address line, city, state and postal code from the response //
+    var address = parksList[i].addresses[0].line1;
+    var city = parksList[i].addresses[0].city;
+    var state = parksList[i].addresses[0].stateCode;
+    var zipCode = parksList[i].addresses[0].postalCode;
+  
+    //Adding a title and this information to respective Divs //
+    var addressTitle = $("#address").text("Address")
+    var addressInfo = $("#address-info").text(address + " " + city + ", " + state + " " + zipCode)
+  
+    //Appending this info to the page //
+    $("#address-div").append(addressTitle, addressInfo)
+   
+    // Calling Entrance Fee info from the response // 
+  
+    var entranceTitle = parksList[i].entranceFees[0].title;
+    var entranceCost = parksList[i].entranceFees[0].cost;
+    var entranceFee = parksList[i].entranceFees[0].description;
+  
+  
+  //Adding this information to respective Divs //
+  var feeTitle = $("#fee-title").text(entranceTitle);
+  var feeCost = $("#entrance-fee-cost").text("$" + entranceCost);
+  var feeInfo = $("#entrance-fee-info").text(entranceFee)
+  
+  $("#fee-div").append(feeTitle, feeCost, feeInfo)
+  
+  //Calling Hours of operation from response //
+  var hourInfo = parksList[i].operatingHours[0].description;
+  
+  //Adding a title and this information to respective Divs //
+  var hourTitle = $("#hours-title").text("Hours of Operation");
+  var hours = $("#hours-description").text(hourInfo);
+  
+  //Appending this information to the page //
+  $("#hours-div").append(hourTitle, hours)
+    console.log(hourInfo)     
+  })
 renderStates()
 
 
