@@ -153,8 +153,20 @@ h3 {
 
 .standard-img {
     height: 80px!important;
+    width: auto;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
 }
 
-.ui {
-    margin-left: 20%;
-}
+.imgs-btns { 
+    width: 10%;
+    text-align: center;
+    display: -moz-inline-grid;
+} 
+
+
+
+
+
