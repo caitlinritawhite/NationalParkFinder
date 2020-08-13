@@ -163,7 +163,7 @@ h3 {
 .imgs-btns { 
     width: 10%;
     text-align: center;
-    display: inline-block;
+    display: -moz-inline-grid;
 } 
 
 
