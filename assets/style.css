@@ -1,0 +1,172 @@
+body {
+      /* Location of the image */
+  background-image: url(./pictures/683878.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+
+/*all paragraphs centered*/
+p {
+    text-align: center;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+}
+
+/*intro title*/
+.title {
+    color: white;
+    font-weight: bold;
+    background-color:rgba(0, 100, 0, .8);
+    margin: 0% 27% 0% 27%;
+    border-radius: 5px;
+}
+
+/*intro subtitles*/
+.subtitle {
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 100, 0, .8);
+    margin: 0% 30% 0% 30%;
+    border-radius: 5px;
+}
+
+/*paragraph in container*/
+.paragraph {
+    color:white;;
+    font-weight: bold;
+    background-color: rgba(0, 100, 0, .8);
+    font-size: large;
+    border-radius: 5px;
+}
+
+/* box containing "HERE" button and dropdown for states*/
+.box {
+    text-align: center;
+    margin: 0% 25% 0% 25%;
+    background-color: lightgrey;
+}
+
+/*"HERE" button*/
+.btn {
+    color: white;
+    background-color: rgba(0, 100, 0, .8);
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+.state-btn {
+    color: white;
+    background-color: rgba(0, 100, 0, .8);
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+ height: 400px;  /* The height is 400 pixels */
+ width: 80%;  /* The width is the width of the web page */
+ margin-left: 10%;
+}
+
+#spinner:not([hidden]) {
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #spinner::after {
+    content: "";
+    width: 120px;
+    height: 120px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #7ff53a;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+/*.slider {
+    /* line them up horizontally */
+    /*display: flex;
+  
+    /* allow for scrolling */
+    /*overflow-x: auto;
+  
+    /* make it smooth on iOS */
+    /*-webkit-overflow-scrolling: touch;
+
+     /* each slide snaps into place */
+    /*scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+
+    color: white;
+    background-color: darkgreen;
+  }
+
+  .slider > div {
+    /* make sure the width is honored */
+   /* flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+  }*/
+
+
+.footer {
+    margin: 25% 30% 25% 30%;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.standard-img {
+    height: 80px!important;
+    width: auto;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+
+.imgs-btns { 
+    width: 10%;
+    text-align: center;
+    display: -moz-inline-grid;
+} 
+
+
+
+
+
