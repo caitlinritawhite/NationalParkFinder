@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="./assets/pictures/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
   <!-- Bulma Version 0.9.0-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-  <!--<link rel="stylesheet" type="text/css" href="../css/hero.css" />-->
+  <link rel="stylesheet" type="text/css" href="../css/hero.css" />
   <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
   <script src=https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css></script>
@@ -23,6 +25,7 @@
 </head>
 
 <body>
+
   <!-- nav bar-->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -35,17 +38,17 @@
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
-      <a href="index.html" class="navbar-item">
-        Home
+      <a href="#introduction" class="navbar-item">
+        About
       </a>
-      <a class="navbar-item">
-        About Us
-      </a>
-      <a class="navbar-item">
+      <a href="#map" class="navbar-item">
         Map
       </a>
-      <a class="navbar-item">
+      <a href="#state-name" class="navbar-item">
         Images
+      </a>
+      <a href="#park-info" class="navbar-item">
+        Park Info
       </a>
     </div>
   </nav>
@@ -53,12 +56,18 @@
   <!--container with title and description of app-->
   <div class="hero-body">
     <div class="container has-text-centered">
-      <h1 class="title">
+      <h1 class="title" id="introduction">
         Welcome to Find Your Path!
       </h1>
       <h2 class="subtitle">A Visitor's Guide to U.S. National Parks</h2>
       <h2 class="paragraph">
-        Attention all nature lovers! Find Your Path is an expert guide to locating all of the United State's National Parks. Simply search your location, or the state you would like to visit, and find all of the information necessary to plan your next hike!
+        Attention all nature lovers! Find Your Path is an expert guide to locating all of the United State's National
+        Parks. Simply search your location, or the state you would like to visit, and find all of the information
+        necessary to plan your next hike! 
+        <br>
+        Once your location or state has been determined, a map will load showing nearby U.S. National Parks.  Below the map you will find a row of parks in your area or state.  Simply click the button with the name of the park you want to visit, and you will see the parks's information below.  
+        <br>
+        Enjoy your visit!
       </h2>
     </div>
   </div>
@@ -140,24 +149,69 @@
 
   <br>
 
+  <!--park images-->
+  <!-- <div class="ui stackable six column grid">
+    <div class="column">
+      <div class="ui segment">
+        <div id="state-name">
+        </div>
+      </div>
+    </div>
+  </div> -->
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="column">
-        <div class="ui three column grid">
-          <div class="ui fluid card">
-            <div class="imgs-btns">
-              <div id="state-img" class="image">
-              </div>
-              <div class="content">
-                <a id="state-name" class="header"></a>
-              </div>
+        <div id="state-name">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="ui grid container">
+    <div class="six wide column">
+      
+    </div>
+  </div> -->
+
+  <!-- <div class="container">
+    <div class="ui grid">
+      <div class="six column row">
+        <div class="column">
+          <div id="state-name">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="card-body">
+            <div id="state-name">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+<!--this is the one to use-->
+  <div class="container">
+    <div class="row">
+      <div class="ui six column grid">
+        <div class="column">
+          <div class="ui fluid card">
+            <div id="state-name">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
 
   <br>
 
@@ -178,9 +232,9 @@
 
 
 
-    <!--Working Image Code-->
+  <!--Working Image Code-->
 
-    <!-- <div id = "state-img" class="ui">
+  <!-- <div id = "state-img" class="ui">
     <div class="content">
         
       </div>
@@ -188,115 +242,84 @@
       </div>
     </div> -->
 
- 
-<!--Card for Park Info Display-->
-  <div class="ui card">
-    <div id="info-div" class="content">
-      <div id = "info-header" class="header"></div>
-      <div id="description" class="description">
-        <p id=address></p>
+<!--park info cards-->
+  <div class="container" id="park-info">
+    <div class="ui stackable four column grid">
+      <div class="column">
+        <!--Card for Park Info Display-->
+        <div class="ui card">
+          <div id="info-div" class="content">
+            <div id="info-header" class="header"></div>
+            <div id="description" class="description">
+              <p id=address></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <!--Hours of Operation Info Display-->
+        <div class="ui card">
+          <div id="hours-div" class="content">
+            <div id="hours-title" class="header"></div>
+            <div id="hours-description" class="description"></div>
+          </div>
+        </div>
+        <!--Card for Entrance Fee Info display-->
+        <div class="ui card">
+          <div id="fee-div" class="content">
+            <div id="fee-title" class="header"></div>
+            <div id="entrance-fee-cost" class="description"></div>
+            <div id="entrance-fee-info" class="description"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <!--Card for Park Directions display-->
+        <div class="ui card">
+          <div id="directions-div" class="content">
+            <div id="directions" class="header"></div>
+            <div id="directions-info" class="description">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <!--Card for Park Address Display-->
+        <div class="ui card">
+          <div id="address-div" class="content">
+            <div id="address" class="header"></div>
+            <div id="address-info" class="description"></div>
+          </div>
+        </div>
+        <!--Card for Park Contact Info display-->
+        <div class="ui card">
+          <div id="contact-div" class="content">
+            <div id="contact-title" class="header"></div>
+            <div id="phone-info" class="description"></div>
+            <div id="email-info" class="description"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!--Card for Park Address Display-->
-  <div class="ui card">
-    <div id="address-div" class="content">
-      <div id = "address" class="header"></div>
-      <div id="address-info" class="description"></div>
-      
-      </div>
+
+  <!--footer with logo and group member's names-->
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <img src="./assets/pictures/pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
+      <p>
+        <strong><p>by</p> <p>Caitlin, Casey, Alexander, and Erik.</p></strong> .
+      </p>
     </div>
-  </div>
-
-  <!--Card for Park Directions display-->
-  <div class="ui card">
-    <div id="directions-div" class="content">
-      <div id = "directions" class="header"></div>
-      <div id="directions-info" class="description">
-      
-      </div>
-    </div>
-    </div>
-
-  <!--Card for Park Contact Info display-->
-  <div class="ui card">
-    <div id="contact-div" class="content">
-      <div id = "contact-title" class="header"></div>
-      <div id="phone-info" class="description"></div>
-      <div id="email-info" class="description"></div>
-    </div>
-  </div>
-
-  <!--Card for Entrance Fee Info display-->
-  <div class="ui card">
-    <div id="fee-div" class="content">
-      <div id = "fee-title" class="header"></div>
-      <div id="entrance-fee-cost" class="description"></div>
-      <div id="entrance-fee-info" class="description"></div>
-    </div>
-  </div>
-
-  <!--Hours of Operation Info Display-->
-  <div class="ui card">
-    <div id="hours-div" class="content">
-      <div id = "hours-title" class="header"></div>
-      <div id="hours-description" class="description"></div>
-      
-    </div>
-  </div>
-
-
-
-    <!--slike carousel of park images-->
-    <!-- <div class="slider">  
-    <div>Slide #1</div>
-    <div>Slide #2</div>
-    <div>Slide #3</div>
-    <div>Slide #4</div>
-    <div>Slide #5</div>
-  </div>-->
-
-    <!-- image carousel of selected National Park -->
-    <!-- <section class="section">
-      <div class="container"> -->
-    <!-- Start Carousel -->
-    <!-- <div id="carousel-demo" class="carousel">
-          <div class="item-1"> -->
-    <!-- pic 1 -->
-    <!-- </div>
-          <div class="item-2"> -->
-    <!-- pic 2 -->
-    <!-- </div>
-          <div class="item-3"> -->
-    <!-- pic 3 -->
-    <!-- </div>
-        </div> -->
-    <!-- End Carousel -->
-    <!-- </div>
-    </section> -->
-    <!--footer with logo and group member's names-->
-    <!-- 
-  <figure id = "state-img" class="image is-128x128">
-
-  </figure> -->
-
-
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <img src="./assets/pictures/pinterest_profile_image.png" alt="fyp logo" width="200" height="200">
-        <p>
-          <strong>Find Your Path</strong> by <a href="">Caitlin, Casey, Alexander, and Erik</a>.
-        </p>
-      </div>
-    </footer>
+  </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZpN1LVa4mDWLaJe-QHtXPPOfXjeg6Ap0&callback=initMap">
   </script>
   <script src="./assets/script.js"></script>
-
 
 </body>
 

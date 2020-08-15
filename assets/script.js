@@ -82,9 +82,9 @@ function displayParks(parks) {
     var imageDiv = $("<div>").attr("id", "state-img" + [i]).addClass("column");
     var stateBtn = $("<button>").text(parks.data[i].fullName).addClass("state-btn").attr("park", i);
     var stateImg = $("<img>").attr("src", parks.data[i].images[i].url).addClass("standard-img")
+    
+    var finalDiv = imageDiv.append(stateImg, stateBtn)
     $("#state-name").append(finalDiv)
-    var finalDiv = $(imageDiv).append(stateImg, stateBtn)
-
  
 
 
