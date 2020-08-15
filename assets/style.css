@@ -26,11 +26,6 @@ p {
     text-align: center;
 }
 
-h3 {
-    color: white;
-    font-weight: bold;
-}
-
 /*intro title*/
 .title {
     color: white;
@@ -63,6 +58,8 @@ h3 {
     text-align: center;
     margin: 0% 25% 0% 25%;
     background-color: lightgrey;
+    font-weight: bold;
+    
 }
 
 /*"HERE" button*/
@@ -73,6 +70,7 @@ h3 {
     padding: 5px 5px 5px 5px;
 }
 
+/*button to select state from dropdown menu*/
 .state-btn {
     color: white;
     background-color: rgba(0, 100, 0, .8);
@@ -87,6 +85,7 @@ h3 {
  margin-left: 10%;
 }
 
+/*spinner while map loads*/
 #spinner:not([hidden]) {
     
     top: 0;
@@ -118,53 +117,44 @@ h3 {
     }
   }
   
-
-/*.slider {
-    /* line them up horizontally */
-    /*display: flex;
-  
-    /* allow for scrolling */
-    /*overflow-x: auto;
-  
-    /* make it smooth on iOS */
-    /*-webkit-overflow-scrolling: touch;
-
-     /* each slide snaps into place */
-    /*scroll-snap-points-x: repeat(300px);
-    scroll-snap-type: mandatory;
-
-    color: white;
-    background-color: darkgreen;
-  }
-
-  .slider > div {
-    /* make sure the width is honored */
-   /* flex-shrink: 0;
-    width: 300px;
-    height: 300px;
-  }*/
-
-
-.footer {
-    margin: 25% 30% 25% 30%;
-    background-color: lightgrey;
-    border-radius: 5px;
-}
-
+/*images of parks*/  
 .standard-img {
     height: 80px!important;
-    width: auto;
+    max-width: auto;
     margin-bottom: 2px;
     border: 1px solid black;
-    border-radius: 5px;
-    
+    border-radius: 5px;   
 }
 
+/*park images and matching buttons*/
 .imgs-btns { 
-    width: 10%;
+    width: 100%;
     text-align: center;
-    display: -moz-inline-grid;
 } 
+
+/*row of images*/
+#state-name {
+  display: flex;
+  text-align: center;
+}
+
+/*park info cards*/
+#park-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/*footer with logo*/
+.footer {
+  margin: 25% 30% 25% 30%;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+/* .column {
+  border: 1px solid hotpink;
+} */
 
 
 
