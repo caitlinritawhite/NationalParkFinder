@@ -20,7 +20,7 @@ https://caitlinritawhite.github.io/NationalParkFinder/
 
 Find your path is a nature lover's guide to U.S. National Parks! Simply search your current location, or any U.S. state to find a list of National Parks nearby. You can get a quick description of the park by clicking on the marker on the map, or you can click on the name of the park below the map to find all of the information necessary to plan your visit. Once you choose a park, you will find a brief description, the address, hours of operation, directions, and fees. Planning a trip can be stressful: use Find Your Path to travel with ease!
 
-![ScreenShot]())
+![ScreenShot](https://user-images.githubusercontent.com/65316520/90457952-fc5a1880-e0ca-11ea-8327-06d3e05cb10a.png)
 
 # Autor
 ### Alexander - Back End Developer - https://github.com/Asostoa
